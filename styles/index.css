@@ -1,0 +1,242 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Avenir Next Regular",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+/* navbar start */
+
+.navTopSection{
+    display: flex;
+    justify-content: space-between;
+    background-color: #f6f6f6;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Roboto', sans-serif;
+    height: 50px;
+}
+.navTopSection>div:nth-child(1){
+    /* border: 2px solid firebrick; */
+    width: 22%;
+    margin-left: 5%;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+    /* line-height: 2.4; */
+    display: flex;
+}
+.aerie{
+    /* margin-top: 1px; */
+    margin-left: 9px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+.navTopSection>div:nth-child(1) a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 16px 20px;
+    background-color: white;
+}
+
+.navTopSection>div:nth-child(1) a:hover{
+    background-color: aliceblue;
+}
+
+.navTopSection>div:nth-child(2){
+    /* border: 2px solid forestgreen; */
+    width: 33%;
+    margin-right: 2%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navTopSection>div:nth-child(2) a span{
+    line-height: 1.7;
+    font-size: 30px;
+    color: black;
+}
+
+/* search */
+#searchBox{
+    height: 30px;
+    margin-top: 8px;
+    width: 220px;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+.searchbtn{
+    border: none;
+    background-color: #f6f6f6;
+    cursor: pointer;
+}
+
+/* top section ends here */
+
+.centerLogo{
+    width: 180px;
+    height: 80px;
+    margin: 1% 44%;
+    border-radius: 20px;
+}
+
+.carousel {
+    overflow: hidden;
+    margin-top: -10px;
+    height: 65px;
+    width: 100%;
+    /* z-index: -10; */
+    position: relative;
+}
+
+/* navbottom */
+.navBottom{
+    border-bottom: 1px solid #dfdddd;
+    width: 100%;
+    margin-top: 10px;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: center;
+}
+.navBottom button{
+    background-color: white;
+    color: #24272a;;
+    border: none;
+    font-size: 13px;
+    height: 40px;
+    margin: 0 14px;
+    margin-bottom: -8px;
+} 
+.navBottom button:hover{
+    border-bottom: 3px solid black;
+}
+
+/* drop down */
+.dropdown{
+    margin-top: 15px; 
+    width: 110%;
+    position: absolute;
+    margin-left: -26%;
+    z-index: 999;
+    display: none;  
+}
+
+.today:hover .dropdown{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: white;
+    animation-name: dropdown;
+    animation-duration: 0.3s;
+}
+
+@keyframes dropdown {
+    0%   {
+        height: 0px;
+    }
+    100% { 
+         height: 43%;
+    } 
+  }
+
+.ddsection{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: left;
+    margin: 0 25px;
+}
+
+.ddsection a{
+    padding: 5px 0;
+    text-decoration: none;
+    color: #24272a;
+}
+.ddsection a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+/* navbar ends here */
+
+.BigImageFirst{
+    height: 800px;
+    width: 100%;
+    background-image: url('https://s7d2.scene7.com/is/image/aeo/20230324-aehp-newarrivals-lg?scl=1&qlt=60&fmt=webp');
+    background-size: cover;
+}
+
+.BigImageFirst>div{
+    width: 40%;
+    text-align: right;
+    position: relative;
+    left: 55%;
+    top: 31%;
+}
+.BigImageFirst p{
+    font-size: 40px;
+    color: rgba(255,153,0,1);
+    font-weight: 700;
+    letter-spacing: 0.5;
+    margin: 0;
+}
+.BigImageFirst button{
+    height: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    max-width: 260px;
+    padding: 5px 18px;
+    min-width: 200px;
+    border: none;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    color: rgba(0,0,0,1);
+    background-color: rgba(191,218,211,1);
+    margin-top: 10px;
+}
+
+/* first section ends here */
+
+/* second section start */
+.section2{
+    height: 300px;
+    background-color: rgba(191,218,211,1);
+}
+.section2 h3{
+    position: relative;
+    left: 19%;
+    top: 40%;
+}
+.section2 h1{
+    position: relative;
+    left: 16.8%;
+    top: 38%;
+    font-size: 45px;
+    font-weight: 700;
+}
+.section2 button{
+    border: none;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    color: rgba(0,0,0,1);
+    background-color: white;
+    height: 50px;
+    min-width: 200px;
+    max-width: 260px;
+    padding: 5px 18px;
+    position: relative;
+    left: 70%;
+}
+
+/* section 2 ends here */
+
+.section3{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 60px 0px;
+    text-align: center;
+}
+.section3 img{
+    height: 700px;
+}
