@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+   box-sizing: border-box;
+}
+
+.cart_container{
+    display: flex;
+    margin: auto;
+    width: 95%;
+    border: 2px red solid;
+    justify-content: space-around;
+}
+
+.total_item{
+    width: 70%;
+    border: 2px black solid;
+}
+
+.total_bill{
+    border: 2px black solid;
+    width: 25%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.heading{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.price_calculation{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px black solid;
+    
+}
+
+.total_price{
+    display: flex;
+    height: 25%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calculation{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    font-weight: 300;
+    font-size: larger;
+}
