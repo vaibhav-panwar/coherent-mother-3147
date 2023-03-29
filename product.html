@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AE Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="./css/products.css">
+</head>
+<body>
+    <div id="main" >
+        <div id="side-bar">
+        <div id="gender"> 
+                <select id="sel-gen">
+                    <option value="">Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div id="choose">
+
+            </div>
+            <div id="filter">
+                <h3>Filter + Sort</h3>
+            
+                <button class="dropdown-btn">Size  <i class="fa fa-plus"></i>
+                </button>
+            
+                <div class="dropdown-container">
+                    <input type="checkbox" id="size" value="XXS"/><label>XXS</label><br>
+                    <input type="checkbox" id="size" value="XS"/><label>XS</label><br>
+                    <input type="checkbox" id="size" value="S"/><label>S</label><br>
+                    <input type="checkbox" id="size" value="M"/><label>M</label><br>
+                    <input type="checkbox" id="size" value="L"/><label>L</label><br>
+                    <input type="checkbox" id="size" value="XL"/><label>XL</label><br>
+                    <input type="checkbox" id="size" value="XXL"/><label>XXL</label><br>
+                </div>
+                <button class="dropdown-btn">Color  <i class="fa fa-plus"></i>
+                </button>
+                <div class="dropdown-container">
+                    <input style="background-color: red;" type="button" id="size" ><label>Red</label><br>
+                    <input style="background-color: blue;" type="button" id="size" /><label>Blue</label><br>
+                    <input style="background-color: yellow;" type="button" id="size" /><label>Yellow</label><br>
+                    <input style="background-color: black;" type="button" id="size" /><label>Black</label><br>
+                    <input style="background-color: brown;" type="button" id="size" /><label>Brown</label><br>
+                    <input style="background-color: maroon;" type="button" id="size" /><label>Maroon</label><br>
+                    <input style="background-color: white;" type="button" id="size" /><label>White</label><br>
+                </div>
+                <button class="dropdown-btn">Price  <i class="fa fa-plus"></i>
+                </button>
+                <div class="dropdown-container">
+                    <input type="checkbox" id="price" value=10/><label>Less Than $10</label><br>
+                    <input type="checkbox" id="price" value=25/><label>$10 - $25</label><br>
+                    <input type="checkbox" id="price" value=50/><label>$25 - $50</label><br>
+                    <input type="checkbox" id="price" value=75/><label>$50 - $75</label><br>
+                    <input type="checkbox" id="price" value=75/><label>Over $75</label><br>
+                </div>
+                <button class="dropdown-btn">Sustainability  <i class="fa fa-plus"></i>
+                </button>
+                <div class="dropdown-container">
+                    <input type="checkbox" id="size" value="XXS"/><label>XXS</label><br>
+                    <input type="checkbox" id="size" value="XS"/><label>XS</label><br>
+                    <input type="checkbox" id="size" value="S"/><label>S</label><br>
+                    <input type="checkbox" id="size" value="M"/><label>M</label><br>
+                    <input type="checkbox" id="size" value="L"/><label>L</label><br>
+                    <input type="checkbox" id="size" value="XL"/><label>XL</label><br>
+                    <input type="checkbox" id="size" value="XXL"/><label>XXL</label><br>
+                </div>
+                <button class="dropdown-btn">Sort  <i class="fa fa-plus"></i>
+                </button>
+                <div class="dropdown-container">
+                    <input type="checkbox" id="size" value="XXS"/><label>XXS</label><br>
+                    <input type="checkbox" id="size" value="XS"/><label>XS</label><br>
+                    <input type="checkbox" id="size" value="S"/><label>S</label><br>
+                    <input type="checkbox" id="size" value="M"/><label>M</label><br>
+                    <input type="checkbox" id="size" value="L"/><label>L</label><br>
+                    <input type="checkbox" id="size" value="XL"/><label>XL</label><br>
+                    <input type="checkbox" id="size" value="XXL"/><label>XXL</label><br>
+                </div>
+            </div>
+        </div>
+        <div id="products">
+
+        </div>  
+    </div>
+    <div id="pagination">
+
+    </div>
+</body>
+<script src="./scripts/sidebar.js"></script>
+<script src="./scripts/products.js"></script>
+</html>
