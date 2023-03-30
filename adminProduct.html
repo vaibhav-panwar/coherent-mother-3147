@@ -10,7 +10,12 @@
 <body>
 
     <nav>
-        
+        <a href="./adminHomePage.html">Home</a>
+        <a href="/showProduct.html">Products</a>
+        <a href="#">Add Product</a>
+        <a href="./pendingOrder.html">Unprocessed order</a>
+        <a href="./customerComplain.html">Customer Complain</a>
+        <div><span id="adminuser"></span></div>
     </nav>
     
 
@@ -33,8 +38,8 @@
         <input type="url" name="image2" id="image2" class="forms_class"><br>
 <br>
 
-        <label for="catergory">catergory</label>
-        <select name="catergory" id="select_category" class="forms_class">
+        <label for="category">category</label>
+        <select name="category" id="select_category" class="forms_class">
             <option value="shirt">Shirt</option>
             <option value="jeans">Jeans</option>
             <option value="shorts">Shorts</option>
@@ -56,7 +61,7 @@
     <br>    
 
         <label for="date">Add Date</label>
-        <input type="date" name="" id="date" class="forms_class"><br>
+        <input type="date" name="date" id="date" class="forms_class"><br>
 
 <br>
 
@@ -86,7 +91,7 @@
         <input type="number" id="quantity" class="forms_class">
 
 
-        <button type="submit">Submit</button>
+        <button type="submit" id="submit">Submit</button>
         
 
     </form>
@@ -95,4 +100,5 @@
 </div>
 
 </body>
+<script src="/scripts/products.js"></script>
 </html>
