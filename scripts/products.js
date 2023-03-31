@@ -2,65 +2,29 @@ let products=document.getElementById("products")
 let url = "https://6421cc1c34d6cd4ebd7c224f.mockapi.io/Products"
 let prod=JSON.parse(localStorage.getItem("prod"))||[]
 let paginate=document.getElementById("pagination")
-let pdata
-fetch(url)
-  .then((res)=>{
-   return res.json()})
-  .then((data)=>{
-    pdata=data.length
-})
-
-let displaycat=document.getElementById("choose")
-var gen = document.getElementById("sel-gen")
-
-// let sortp = document.querySelectorAll("sort")
-// sortp.addEventListener("click",()=>{
-//   alert("value", sortp.value)
-// })
-
-gen.addEventListener("change",function(){
-    console.log(gen.value)
-    displaycat.innerHTML=""
-  if(gen.value=="male"){
-    let c1 = document.createElement("p")
-   // c1.setAttribute("name",jeans)
-    c1.textContent="jeans"
-    let c2 = document.createElement("p")
-    // c2.setAttribute("value",tshirt)
-    c2.textContent="tshirt"
-    let c3 = document.createElement("p")
-    // c3.setAttribute("value",shirt)
-    c3.textContent="shirt"
-    let c4 = document.createElement("p")
-    // c4.setAttribute("value",shorts)
-    c4.textContent="shorts"
-    displaycat.append(c1,c2,c3,c4)
-  }else{
-    let c1 = document.createElement("p")
-    // c1.setAttribute("value",jeans)
-    c1.textContent="jeans"
-    let c2 = document.createElement("p")
-    // c2.setAttribute("value",tshirt)
-    c2.textContent="tshirt"
-    let c3 = document.createElement("p")
-    // c3.setAttribute("value",dress)
-    c3.textContent="dress"
-    let c4 = document.createElement("p")
-    // c4.setAttribute("value",shorts)
-    c4.textContent="shorts"
-    displaycat.append(c1,c2,c3,c4)
+let arr=[]
+fetchnumber(url)
+async function fetchnumber(api) {
+  try {
+      let res = await fetch(api)
+      let data = await res.json()
+      arr.push(data.length)
   }
-  })
+  catch (err) {
+      console.log(err)
+  }
+}
+
 
 renderprod(1)
 function renderprod(page){
     page=+page
-    // console.log(typeof(page))
     let purl=url+`?limit=9&page=${+page}`
   fetch(purl)
   .then((res)=>{
    return res.json()})
   .then((data)=>{
+    let pdata = arr[0];
     let btncnt=Math.ceil(pdata/9)
     paginate.innerHTML=null
     for(let i=1;i<=btncnt;i++){
@@ -81,7 +45,7 @@ function createcardlist(data){
                 ele.name,
                 ele.image1,
                 ele.image2,
-                ele.catagory,
+                ele.category,
                 ele.gender,
                 ele.price,
                 ele.addDate,
@@ -108,7 +72,7 @@ function getcard(id,name,image1,image2,cat,gen,price,date,ship,desc,size,dis,qty
         name:name,
         image1:image1,
         image2:image2,
-        catagory:cat,
+        category:cat,
         gender:gen,
         price:price,
         addDate:date,
@@ -118,7 +82,7 @@ function getcard(id,name,image1,image2,cat,gen,price,date,ship,desc,size,dis,qty
         discount:dis,
         quantity:qty
       }
-      localStorage.setItem("prod",JSON.stringify(prod))
+       localStorage.setItem("prod",JSON.stringify(prod))
       window.location.href="./productDetails.html"
     })
 
@@ -161,11 +125,6 @@ function getcard(id,name,image1,image2,cat,gen,price,date,ship,desc,size,dis,qty
     }else{
         cprice.textContent=`$${price}USD`
     }
-
-    // let view = document.createElement("button")
-    // view.classList.add("view-prod")
-    // view.textContent="Details"
-
     cardbody.append(title,cprice)
     card.append(cardimg,cardbody)
 

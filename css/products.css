@@ -114,3 +114,8 @@ display: block;
 #pagination button:hover{
     color: gray;
 }
+
+#male{
+    font-size: 16px;
+    font-family: bold;
+}

@@ -12,17 +12,20 @@
 <body>
     <div id="main" >
         <div id="side-bar">
-        <div id="gender"> 
+            <div id="filter">
                 <select id="sel-gen">
-                    <option value="">Gender</option>
+                    <option value="">Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
-            </div>
-            <div id="choose">
-
-            </div>
-            <div id="filter">
+                <label id="male" class="dropdown-btn">Categories <i class="fa fa-plus"></i></label>
+                <div class="dropdown-container">
+                    <input type="checkbox" id="cat" value="jeans" /><label>Jeans</label><br>
+                    <input type="checkbox" id="cat" value="shirt" /><label>Shirts</label><br>
+                    <input type="checkbox" id="cat" value="tshirt" /><label>T-Shirts</label><br>
+                    <input type="checkbox" id="cat" value="shorts" /><label>Shorts</label><br>
+                    <input type="checkbox" id="cat" value="dress" /><label>Dresses</label><br>
+                </div>
                 <h3>Filter + Sort</h3>
             
                 <button class="dropdown-btn">Size  <i class="fa fa-plus"></i>
@@ -50,9 +53,9 @@
                 </button>
                 <div class="dropdown-container">
                     <input type="checkbox" id="price" value=10/><label>Less Than $10</label><br>
-                    <input type="checkbox" id="price" value=25/><label>$10 - $25</label><br>
-                    <input type="checkbox" id="price" value=50/><label>$25 - $50</label><br>
-                    <input type="checkbox" id="price" value=75/><label>$50 - $75</label><br>
+                    <input type="checkbox" id="price" value=25/><label>Less Than $25</label><br>
+                    <input type="checkbox" id="price" value=50/><label>Less Than $50</label><br>
+                    <input type="checkbox" id="price" value=75/><label>Less Than $75</label><br>
                     <input type="checkbox" id="price" value=75/><label>Over $75</label><br>
                 </div>
                 <button class="dropdown-btn">Sustainability  <i class="fa fa-plus"></i>
@@ -64,8 +67,8 @@
                 </button>
                 <div class="dropdown-container">
                     <input type="radio" id="sort" name="sort" value="feature"/><label>Featured</label><br>
-                    <input type="radio" id="sort" name="sort" value="asc"/><label>Price: Low to High</label><br>
-                    <input type="radio" id="sort" name="sort" value="desc"/><label>Price: High toLow</label><br>
+                    <input type="radio" id="sort1" name="sort" value="asc"/><label>Price: Low to High</label><br>
+                    <input type="radio" id="sort2" name="sort" value="desc"/><label>Price: High to Low</label><br>
                     <input type="radio" id="sort" name="sort" value="new"/><label>Newest</label><br>
                     <input type="radio" id="sort" name="sort" value="online"/><label>Online Only</label><br>
                 </div>
@@ -79,6 +82,7 @@
 
     </div>
 </body>
-<script src="./scripts/sidebar.js"></script>
 <script src="./scripts/products.js"></script>
+<script src="./scripts/sidebar.js"></script>
+
 </html>
