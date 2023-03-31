@@ -126,7 +126,7 @@ adminuser.textContent = `Hey ${localStorage.getItem("adminAuth")}`;
 fetch('https://6421cc1c34d6cd4ebd7c224f.mockapi.io/Products')
   .then(response => response.json())
   .then(data => {
-    const productsPerPage = 8;
+    const productsPerPage = 5;
     let currentPage = 1;
     
     const renderProducts = (page) => {
@@ -173,7 +173,9 @@ fetch('https://6421cc1c34d6cd4ebd7c224f.mockapi.io/Products')
         btn.addEventListener('click', async () => {
           const productId = btn.getAttribute('data-id');
           const product = await fetchProduct(productId);
-          fillForm(product);
+          // fillForm(product);
+          window.location.href='./adminProduct.html';
+          window.location.replace('./adminProduct.html');
         });
       });
     }
@@ -232,4 +234,16 @@ async function deleteProduct(productId) {
        }
   
   
-  
+      let edit=JSON.parse(localStorage.getItem('forEdit')) || [];
+
+       async function fetchProduct(productId) {
+           try {
+             let response = await fetch(`https://6421cc1c34d6cd4ebd7c224f.mockapi.io/Products/${productId}`);
+             let product = await response.json();
+             edit=product
+             localStorage.setItem('forEdit',JSON.stringify(edit))
+             return product;
+           } catch (error) {
+             console.error('Error fetching product:', error);
+           }
+         }
