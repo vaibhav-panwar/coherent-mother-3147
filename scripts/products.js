@@ -1,10 +1,22 @@
 let products=document.getElementById("products")
 let url = "https://6421cc1c34d6cd4ebd7c224f.mockapi.io/Products"
+let prod=JSON.parse(localStorage.getItem("prod"))||[]
 let paginate=document.getElementById("pagination")
-
+let pdata
+fetch(url)
+  .then((res)=>{
+   return res.json()})
+  .then((data)=>{
+    pdata=data.length
+})
 
 let displaycat=document.getElementById("choose")
 var gen = document.getElementById("sel-gen")
+
+// let sortp = document.querySelectorAll("sort")
+// sortp.addEventListener("click",()=>{
+//   alert("value", sortp.value)
+// })
 
 gen.addEventListener("change",function(){
     console.log(gen.value)
@@ -42,20 +54,20 @@ gen.addEventListener("change",function(){
 
 renderprod(1)
 function renderprod(page){
-url=url+`?limit=12&page=${page}`
-  fetch(url)
+    page=+page
+    // console.log(typeof(page))
+    let purl=url+`?limit=9&page=${+page}`
+  fetch(purl)
   .then((res)=>{
-    console.log(res.length)
    return res.json()})
   .then((data)=>{
-    let count=data.length
-    let btncnt=Math.ceil(count/12)
+    let btncnt=Math.ceil(pdata/9)
     paginate.innerHTML=null
     for(let i=1;i<=btncnt;i++){
-        console.log(i)
       paginate.append(getbuttons(i))
     }
     products.innerHTML=null
+    console.log(data)
     createcardlist(data)
   })
 }
@@ -90,10 +102,45 @@ function getcard(id,name,image1,image2,cat,gen,price,date,ship,desc,size,dis,qty
 
     let cardimg = document.createElement('div')
     cardimg.classList.add("card-img")
+    cardimg.addEventListener("click",()=>{
+      let prod={
+        id:id,
+        name:name,
+        image1:image1,
+        image2:image2,
+        catagory:cat,
+        gender:gen,
+        price:price,
+        addDate:date,
+        shipping:ship,
+        description:desc,
+        size:size,
+        discount:dis,
+        quantity:qty
+      }
+      localStorage.setItem("prod",JSON.stringify(prod))
+      window.location.href="./productDetails.html"
+    })
 
-    let pimg1 = document.createElement("img")
-    pimg1.setAttribute("src",image1)
-    cardimg.append(pimg1)
+    let pimg = document.createElement("img")
+    pimg.setAttribute("src",image1)
+    pimg.addEventListener("mouseenter",()=>{
+      pimg.setAttribute("src",image2)
+    })
+    pimg.addEventListener("mouseleave",()=>{
+      pimg.setAttribute("src",image1)
+    })
+    let icon =document.createElement("i")
+    icon.classList.add("fa", "fa-heart","heart-icon")
+   // icon.classList.add("heart", "fa", "fa-heart-o")
+    icon.setAttribute("id","heart")
+
+    let add = document.createElement("button")
+    add.classList.add("add-prod")
+    add.textContent="Add to Cart"
+    cardimg.appendChild(add)
+    cardimg.appendChild(icon)
+    cardimg.appendChild(pimg)
 
     let cardbody = document.createElement("div")
     cardbody.classList.add("card-body")
@@ -114,19 +161,12 @@ function getcard(id,name,image1,image2,cat,gen,price,date,ship,desc,size,dis,qty
     }else{
         cprice.textContent=`$${price}USD`
     }
-    let add = document.createElement("button")
-    add.classList.add("add-prod")
-    add.textContent="Add to Cart"
 
-    let view = document.createElement("button")
-    view.classList.add("add-prod")
-    view.textContent="Details"
+    // let view = document.createElement("button")
+    // view.classList.add("view-prod")
+    // view.textContent="Details"
 
-    let wish = document.createElement("button")
-    wish.classList.add("add-prod")
-    wish.textContent="Add to Wishlist"
-
-    cardbody.append(title,cprice,view,add,wish)
+    cardbody.append(title,cprice)
     card.append(cardimg,cardbody)
 
     return card
@@ -135,14 +175,13 @@ function getcard(id,name,image1,image2,cat,gen,price,date,ship,desc,size,dis,qty
 
 function getbuttons(page){
   let btn=document.createElement("button")
+  console.log(page)
   btn.setAttribute("data-id",page)
   btn.classList.add("pagebtn")
   btn.textContent=page
 
   btn.addEventListener("click",(e)=>{
   let num=e.target.dataset.id;
-  console.log(num)
- 
   renderprod(num)
 })
 return btn

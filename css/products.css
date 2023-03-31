@@ -35,10 +35,17 @@ display: block;
     text-decoration: line-through;
 }
 .card-img{
-text-align: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 .card-img img{
     width: 100%;
+    /* position: relative; */
 }
 .card-body button{
     margin: auto;
@@ -57,4 +64,53 @@ text-align: center;
 .card-body button:hover{
     border: solid gray;
     border-width: medium;
+}
+#heart{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    cursor: pointer;
+    
+}
+.add-prod{
+    display: block;
+    margin: 0 auto;
+    /* margin-left: 90px; */
+    background-color: none;
+    position: absolute;
+    bottom: 20px;
+    font-size: 12px;
+    width: 150px;
+    height: 30px;
+    border: solid gray;
+    border-width: thin;
+    font-weight: bold;
+    font-size: 14;
+    border-radius: 15px;
+    background-color: white;
+}
+.add-prod:hover{
+    border: solid gray;
+    border-width: medium;
+}
+#pagination{
+    float:right;
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+#pagination button{
+   margin-right:10px;
+   border: none;
+   background-color: white;
+   font-size: 20px;
+   font-weight: bold;
+}
+#pagination button:hover{
+    color: gray;
 }
