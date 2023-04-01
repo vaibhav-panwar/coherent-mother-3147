@@ -8,17 +8,25 @@
     <link rel="stylesheet" href="cart.css">
 </head>
 <body>
-    <div class="cart_container">
 
+    <!-- progress bar -->
+    <div id="progressBar">
+        <p id="need_to_buy">Spend <span id="shipping_amt">0.00</span> more for free standard shipping!</p>
+        <div id="progress">
+            <div id="bar"></div>
+        </div>
+    </div>
+
+    <div class="cart_container">
         <!-- left div -->
         <div class="total_item">
-
+            <div class="product-container"></div>
         </div>
 
         <!-- right div -->
         <div class="total_bill">
             <div class="heading">
-                <h2>Order Detais</h2>
+                <h2>Order Details</h2>
             </div>
             <div class="price_calculation">
                 <div class="calculation">
@@ -31,16 +39,41 @@
                 </div>
                 <div class="calculation">
                     <div>Delivery Charge</div>
-                    <div><sapn id="deliveryChrg">Free</sapn></div>
+                    <div><sapn id="deliveryChrg">60</sapn></div>
                 </div>
             </div>
             <div class="total_price">
                 <div class="calculation">
                     <div>Total Amount</div>
-                    <div><sapn>0</sapn></div>
+                    <div><sapn id="total_bill">0</sapn></div>
                 </div>
             </div>
+            <div class="btn"><button id="btnBuy">Buy</button></div>
         </div>
     </div>
+
+    <!-- for customer details -->
+    <div class="customer_details">
+
+        <div class="details" id="customer_address">
+        </div>
+
+        <div class="details" id="customer_paymentOpt">
+            <div class="details_box" id="method">
+            </div>
+
+            <div class="details_box" id="cod-info">
+            </div>
+    
+            <div class="details_box" id="online-info">
+            </div>
+        </div>
+
+        <div class="details btn" id="final_opt">
+        </div>
+
+    </div>
+
+    <script src="cart.js"></script>
 </body>
 </html>
