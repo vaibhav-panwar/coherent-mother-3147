@@ -1,0 +1,32 @@
+h1{
+    width: 300px;
+    margin: auto;
+}
+form{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height:70vh;
+    justify-content: space-evenly;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 40px;
+}
+form div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+form div>input{
+    width: 32%;
+    height: 7vh;
+}
+form>input{
+    height: 7vh;
+
+}
+form input , textarea{
+    border: 2px solid black;
+    border-radius: 5px;
+}
