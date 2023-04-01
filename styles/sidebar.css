@@ -1,3 +1,6 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
 .side-bar {
     height: 100%;
     width: 200px;
@@ -12,11 +15,13 @@
   .side-bar a, .dropdown-btn {
     /* padding: 6px 8px 6px 16px; */
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: #000000;
     width: 200px;
-    border-top: #111;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top: solid #111;
     border-bottom: #111;
     display: block;
     border: none;
@@ -29,10 +34,12 @@
     color: #000000;
   }
   label{
-    margin-left: 10px;
+    margin-left: 8px;
     font-size: 12px;
+    font-weight: bold;
   }
   #size{
+    margin-top: 10px;
     border: none;
     border-radius: 50%;
     width: 20px;
@@ -44,6 +51,8 @@
   }
   .dropdown-container {
     display: none;
+    margin-top: 10px;
+    margin-bottom:20px ;
     background-color: #ffffff;
     padding-left: 8px;
   }
@@ -88,4 +97,46 @@
     font-size: 16px;
     font-weight: bold;
   }
-  
+  #sel-gen{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  #cat{
+    margin-top: 10px;
+    /* margin-bottom: 20px; */
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  #price{
+    margin-top: 10px;
+    /* margin-bottom: 20px; */
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  #sustain{
+    margin-top: 10px;
+    /* margin-bottom: 20px; */
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  #clr{
+    border: none;
+    width: 20px;
+    border-radius: 50%;
+  }
+  #sort,#sort1, #sort2{
+    margin-top: 10px;
+    /* margin-bottom: 20px; */
+    width: 20px;
+    height: 20px;
+  }
