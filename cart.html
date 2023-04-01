@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+    <!-- progress bar -->
+    <div id="progressBar">
+        <p id="need_to_buy">Spend <span id="shipping_amt">0.00</span> more for free standard shipping!</p>
+        <div id="progress">
+            <div id="bar"></div>
+        </div>
+    </div>
+
+    <div class="cart_container">
+        <!-- left div -->
+        <div class="total_item">
+            <div class="product-container"></div>
+        </div>
+
+        <!-- right div -->
+        <div class="total_bill">
+            <div class="heading">
+                <h2>Order Details</h2>
+            </div>
+            <div class="price_calculation">
+                <div class="calculation">
+                    <div>Price</div>
+                    <div><sapn id="price">0</sapn></div>
+                </div>
+                <div class="calculation">
+                    <div>Discount</div>
+                    <div><sapn id="discount">0</sapn></div>
+                </div>
+                <div class="calculation">
+                    <div>Delivery Charge</div>
+                    <div><sapn id="deliveryChrg">60</sapn></div>
+                </div>
+            </div>
+            <div class="total_price">
+                <div class="calculation">
+                    <div>Total Amount</div>
+                    <div><sapn id="total_bill">0</sapn></div>
+                </div>
+            </div>
+            <div class="btn"><button id="btnBuy">Buy</button></div>
+        </div>
+    </div>
+
+    <!-- for customer details -->
+    <div class="customer_details">
+
+        <div class="details" id="customer_address">
+        </div>
+
+        <div class="details" id="customer_paymentOpt">
+            <div class="details_box" id="method">
+            </div>
+
+            <div class="details_box" id="cod-info">
+            </div>
+    
+            <div class="details_box" id="online-info">
+            </div>
+        </div>
+
+        <div class="details btn" id="final_opt">
+        </div>
+
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>
