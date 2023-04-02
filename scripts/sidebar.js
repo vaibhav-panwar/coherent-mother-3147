@@ -13,7 +13,8 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
-
+let localsearch = JSON.parse(localStorage.getItem("searchfilter"));
+let localgender = JSON.parse(localStorage.getItem("filterbyCat"));
 
 let filter = {
   gender: "",

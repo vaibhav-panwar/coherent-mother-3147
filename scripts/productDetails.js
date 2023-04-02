@@ -111,6 +111,7 @@ bag.addEventListener("click",()=>{
                 quantity:item,
                 price:pr,
                 image:data.image1,
+                discount:data.discount,
                 size:sel.value
             }
             console.log(cart)

@@ -51,7 +51,8 @@ function createRow(orderid, paymentType, orderDate, total) {
     p.textContent = "Cancel Order";
     td6.append(p)
     td6.addEventListener("click", async () => {
-        await aw2(orderid)
+        let obj = {status:"cancel"}
+        await aw2(orderid,obj)
         location.reload();
     })
     tr.append(td1, td2, td3, td4, td5,td6)
@@ -69,12 +70,13 @@ async function aw1(orderid, obj) {
         .then((data) => console.log(data))
         .catch((err) => console.error(err))
 }
-async function aw2(orderid) {
+async function aw2(orderid,obj) {
     await fetch(`${url}/${orderid}`, {
-        method: 'DELETE',
+        method: 'PATCH',
         headers: {
             'Content-type': 'application/json'
-        }
+        },
+        body:JSON.stringify(obj)
     })
         .then((res) => res.json())
         .then((data) => console.log(data))
