@@ -11,7 +11,7 @@
 }
 .navTopSection>div:nth-child(1){
     /* border: 2px solid firebrick; */
-    width: 22%;
+    width: 24%;
     margin-left: 5%;
     font-size: 20px;
     letter-spacing: 2px;
@@ -31,6 +31,7 @@
     padding: 10px 20px;
     background-color: white;
 }
+
 
 .navTopSection>div:nth-child(1) a:hover{
     background-color: aliceblue;

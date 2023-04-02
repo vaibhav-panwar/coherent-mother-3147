@@ -74,3 +74,14 @@ for(let i = 0; i < shopnowbtns.length; i++){
       window.location.href = "./productsPage.html"
 
 })
+
+//username -
+
+let uname = JSON.parse(localStorage.getItem("userlogin"))
+
+let name = document.getElementById("username")
+
+name.textContent = uname.username.toUpperCase();
+
+
+

@@ -145,3 +145,32 @@ function getbuttons(page){
 })
 return btn
 }
+
+//user
+let uname = JSON.parse(localStorage.getItem("userlogin"))
+
+let name = document.getElementById("username")
+
+name.textContent = uname.username.toUpperCase();
+
+///
+let Menbtn = document.querySelector(".men")
+Menbtn.addEventListener("click", ()=>{
+    localdata = "men"
+    localStorage.setItem("filterbyCat", localdata)
+    window.location.href = "./productsPage.html"
+  })
+  
+let womenbtn = document.querySelector(".women")
+womenbtn.addEventListener("click", ()=>{
+  localdata = "women"
+  localStorage.setItem("filterbyCat", localdata)
+  window.location.href = "./productsPage.html"
+})
+
+let jeans = document.querySelector(".jeans")
+jeans.addEventListener("click", ()=>{
+  localdata = "jeans"
+  localStorage.setItem("filterbyCat", localdata)
+  window.location.href = "./productsPage.html"
+})
