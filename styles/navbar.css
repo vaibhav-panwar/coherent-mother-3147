@@ -27,13 +27,14 @@
 }
 .navTopSection>div:nth-child(1) a{
     text-decoration: none;
-    font-size: 18px;
-    padding: 16px 20px;
+    font-size: 14px;
+    padding: 10px 20px;
     background-color: white;
 }
 
 .navTopSection>div:nth-child(1) a:hover{
     background-color: aliceblue;
+    color: #24272a;
 }
 
 .navTopSection>div:nth-child(2){

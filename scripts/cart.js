@@ -1,247 +1,209 @@
 
 // progress bar
-function setProgress(progress){
+function setProgress(progress) {
     let bar = document.getElementById("bar");
     let shipping_free_amt = document.getElementById("shipping_amt");
-    let deliveryChrg = document.getElementById("deliveryChrg");
-    
-    if(progress<100){
+    // let deliveryChrg = document.getElementById("deliveryChrg");
+
+    if (progress < 100) {
         bar.style.width = `${progress}%`;
-        shipping_free_amt.innerText = "$"+(100-progress);
+        shipping_free_amt.innerText = "$" + (100 - progress);
     }
-    else{
+    else {
         bar.style.width = `100%`;
         need_to_buy.innerText = "You are Eligible for Free shipping!";
-        deliveryChrg.innerText=0;
-        deliveryChrg.style.color="red";
+        // deliveryChrg.innerText = 0;
+        // deliveryChrg.style.color = "red";
     }
 }
-
-
-// after click on buyBtn address form should be open
-
-let btnBuy = document.getElementById("btnBuy");
-btnBuy.addEventListener("click", function(e){
-    e.preventDefault();
-    let addressEl = document.getElementById("customer_address");
-    addressEl.innerHTML = `
-    <div class="address">
-    <h2>Add Address</h2>
-    <form class="address_form">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name">
-      <label for="street1">Street Address 1:</label>
-      <input type="text" id="street1" name="street1">
-      <label for="street2">Street Address 2:</label>
-      <input type="text" id="street2" name="street2">
-      <label for="city">City:</label>
-      <input type="text" id="city" name="city">
-      <label for="state">State:</label>
-      <input type="text" id="state" name="state">
-      <label for="zipcode">Zip Code:</label>
-      <input type="text" id="zipcode" name="zipcode">
-      <input type="submit" value="Submit">
-    </form>
-</div>
-      `;
-
-      submitAddress();
-})
-
-function submitAddress(){
-    var address_form = document.querySelector(".address_form");
-    address_form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    var name = document.getElementById('name').value;
-    var street1 = document.getElementById('street1').value;
-    var street2 = document.getElementById('street2').value;
-    var city = document.getElementById('city').value;
-    var state = document.getElementById('state').value;
-    var zipcode = document.getElementById('zipcode').value;
-            
-        var data = {
-            name: name,
-            street1: street1,
-            street2: street2,
-            city: city,
-            state: state,
-            zipcode: zipcode
-        };
-            
-        // fetch('/api/add-address', {
-        //     method: 'POST',
-        //     headers: {
-        //     'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        //     })
-        //     .then(function(response) {
-        //       // Handle response here
-        //     })
-        //     .catch(function(error) {
-        //       // Handle error here
-        //     });
-    
-  // after submitting address, Payment option should be open
-
-      let paymentOpt = document.getElementById("method");
-      paymentOpt.innerHTML = `
-          <div class="address">
-            <label><h2>Payment Method:</h2></label>
-            <select id="payment-method">
-                <option value="sel">Select Method</option>
-                <option value="cod">Cash on Delivery</option>
-                <option value="online">Online Payment</option>
-            </select>
-            </div>
-            `;
-
-            selectPaymentMethod();
-  });
-};
-
-// after selecting payment option appropriate form should be open
-function selectPaymentMethod(){
-  
-  var paymentMethod = document.getElementById('payment-method');
-  var codInfo = document.getElementById('cod-info');
-  var onlineInfo = document.getElementById('online-info');
-  var finalOpt = document.getElementById("final_opt");
-
-  paymentMethod.addEventListener('change', function(event) {
-      if (event.target.value === 'sel') {
-          onlineInfo.innerHTML = null;
-          codInfo.innerHTML = null;
-          finalOpt.innerHTML = null;
-      } else if (event.target.value === 'cod') {
-          onlineInfo.innerHTML = null;
-          codInfo.innerHTML = `
-          <div>
-          <h3>Please have exact change ready when your order arrives.</h3>
-          </div>
-          `;
-
-          finalOpt.innerHTML = `
-          <div class="btn">
-          <button id="confirmationBtn">Place Order</button>
-          </div>
-          `
-      } else if (event.target.value === 'online') {
-          codInfo.innerHTML = null;
-          finalOpt.innerHTML = null;
-          onlineInfo.innerHTML = `
-          <div class="address">
-              <h2>Add Payment Method</h2>
-              <form id="online_payment_form">
-                  <label for="name">Name on Card:</label>
-                  <input type="text" id="name" name="name">
-                  <label for="cardnumber">Card Number:</label>
-                  <input type="text" id="cardnumber" name="cardnumber">
-                  <label for="expiration">Expiry Date:</label>
-                  <input type="text" id="expiration" name="expiration">
-                  <label for="cvv">CVV:</label>
-                  <input type="text" id="cvv" name="cvv">
-                  <input type="submit" value="Submit">
-              </form>
-          </div>
-          `;
-
-          orderPlaced();
-      }
-  });
+let orderid = JSON.parse(localStorage.getItem("orderid")) || []
+let userarr = JSON.parse(localStorage.getItem("userlogin")) || [];
+let arr = JSON.parse(localStorage.getItem("cart-items")) || [];
+console.log(arr);
+let cardlist = document.getElementById("cardList");
+let tot = document.getElementById("noOfItems");
+let totalprice = document.getElementById("totalprice");
+let totaldiscount = document.getElementById("totaldiscount");
+let totalshipping = document.getElementById("shipping");
+let alltotal = document.getElementById("alltotal");
+let btncod = document.getElementById("btn1");
+let btnonline = document.getElementById("btn2");
+let elform = document.querySelector("form");
+let cardnumber = document.getElementById("cardnumber");
+let cvv = document.getElementById("cvv");
+let totpri = 0;
+let totdisc = 0;
+let sum = 0;
+append();
+tot.textContent = sum
+totpri = Math.round(totpri * 100);
+totpri = totpri / 100;
+totdisc = Math.round(totdisc * 100);
+totdisc = totdisc / 100;
+let abc = totpri - totdisc;
+totalprice.textContent = `$ ${totpri}`;
+totaldiscount.textContent = `$ ${totdisc}`;
+setProgress(abc)
+let totalbill
+if (abc >= 100) {
+    totalshipping.textContent = `$ ${0.00}`
+    totalbill = totpri - totdisc + 0;
+    totalbill = Math.round(totalbill * 100);
+    console.log(totalbill)
+    totalbill = totalbill / 100;
+    alltotal.textContent = `$ ${totalbill}`
 }
-
-function orderPlaced(){
-    var finalOpt = document.getElementById("final_opt");
-    var onlinePayment = document.getElementById("online_payment_form");
-    onlinePayment.addEventListener("submit", function(event) {
-    event.preventDefault();
-    finalOpt.innerHTML = `
-        
-        <button id="confirmationBtn">Place Order</button>
-        
-        `;
-    })
+else {
+    totalshipping.textContent = `$ ${7.81}`
+    totalbill = totpri - totdisc + 7.81;
+    totalbill = Math.round(totalbill * 100);
+    totalbill = totalbill / 100;
+    alltotal.textContent = `$ ${totalbill}`
 }
 
 
-let productData = document.querySelector(".product-container");
-let lsData = JSON.parse(localStorage.getItem("cart-items")) || []; //*******
 
-displaydata(lsData)
-function displaydata(data){
-    productData.innerHTML = "";
 
-    data.forEach((element) => {
-        let cards = document.createElement("div");
-        let image = document.createElement("img");
-        let name = document.createElement("h2");
-        let price = document.createElement("h3");
-        
-        let increase = document.createElement("button");
-        let decrease = document.createElement("button");
-        let remove = document.createElement("button");
-        let Quantity = document.createElement("span");
-
-        increase.addEventListener("click", () => {
-            element=element.Quantity++;
-            localStorage.setItem("cart-items", JSON.stringify(lsData));
-            displaydata(lsData)
-        });
-
-        decrease.addEventListener("click", () => {
-            if(element.Quantity>1){
-            element=element.Quantity--;
-            localStorage.setItem("cart-items", JSON.stringify(lsData));
-            displaydata(lsData)
-            }
-        });
-
-        remove.addEventListener("click", () => {
-            lsData=lsData.filter((product) => {
-                return product.id != element.id;
+btncod.addEventListener("click", () => {
+    if (userarr.length == 0) {
+        window.location.href = "./userLogIn.html";
+        window.location.replace("./userLogIn.html");
+    }
+    else {
+        let obj = {
+            "payment-type": "cash",
+            "delivery-date": "",
+            status: "pending",
+            quantity: sum,
+            total: totalbill,
+            "user-address": userarr.address
+        }
+        fetch("https://642418c7d6152a4d48067bc3.mockapi.io/orders/", {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                orderid.push(data.id);
+                localStorage.setItem("orderid", JSON.stringify(orderid));
+                console.log(data)
             })
-            localStorage.setItem("cart-items", JSON.stringify(lsData));
-            displaydata(lsData)
-        });
+            .catch((err) => console.error(err))
 
-        image.setAttribute("src", element.image);
-        name.textContent = element.name;
-        price.textContent = `Price: $${element.price}`;
-        increase.textContent = "+";
-        decrease.textContent = "-";
-        Quantity.textContent = element.Quantity;
-        remove.textContent = "Remove";
+        alert("order placed")
+    }
+})
+btnonline.addEventListener("click", () => {
+    if (userarr.length == 0) {
+        window.location.href = "./userLogIn.html";
+        window.location.replace("./userLogIn.html");
+    }
+    else {
+        elform.style.visibility = "visible"
+    }
+})
+elform.addEventListener("submit", (e) => {
+    e.preventDefault();
+    fetch("https://642942415a40b82da4cf4804.mockapi.io/atm")
+        .then((res) => res.json())
+        .then((data) => {
+            let flag = false;
+            for (let i = 0; i < data.length; i++) {
+                if (cardnumber.value == data[i].cardNumber && cvv.value == data[i].cvv) {
+                    flag = true;
+                }
+            }
+            if (flag == false) {
+                alert("enter valid credentials")
+            }
+            else {
+                let obj = {
+                    "payment-type": "cash",
+                    "delivery-date": "",
+                    status: "pending",
+                    quantity: sum,
+                    total: totalbill,
+                    "user-address": userarr.address
+                }
+                fetch("https://642418c7d6152a4d48067bc3.mockapi.io/orders/", {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify(obj)
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        orderid.push(data.id);
+                        localStorage.setItem("orderid", JSON.stringify(orderid));
+                        console.log(data)
+                    })
+                    .catch((err) => console.error(err))
 
-        totalPrice();
-        
-
-        cards.append(image, name, price, increase, Quantity, decrease, remove);
-        productData.append(cards);
+                alert("order placed")
+            }
+        })
+})
+function append() {
+    cardlist.innerHTML = "";
+    arr.forEach((el) => {
+        totpri = totpri + ((+el.price) * el.quantity);
+        console.log(totpri)
+        sum = sum + el.quantity;
+        let card = document.createElement("div");
+        card.setAttribute("class", "card");
+        let contentdiv = document.createElement("div");
+        contentdiv.setAttribute("id", "content");
+        let imgDiv = document.createElement("div");
+        imgDiv.setAttribute("id", "imgdiv");
+        let img = document.createElement("img")
+        img.setAttribute("src", el.image);
+        imgDiv.append(img);
+        let dataDiv = document.createElement("div");
+        dataDiv.setAttribute("id", "datadiv")
+        let dname = document.createElement("h2");
+        dname.textContent = el.name;
+        let op = (+el.price) - ((+el.price) * ((el.discount) / 100));
+        let dc = ((+el.price) * ((el.discount) / 100)) * el.quantity;
+        totdisc = totdisc + dc;
+        op = Math.round(op * 100);
+        op = op / 100;
+        let pdisp = document.createElement("h4");
+        let sp1 = document.createElement("span");
+        let sp2 = document.createElement("span");
+        sp2.setAttribute("id", "sp2");
+        sp1.textContent = op;
+        sp2.textContent = el.price;
+        pdisp.append(sp1, sp2);
+        let dsize = document.createElement("p");
+        dsize.textContent = `size : ${el.size}`
+        let dquantity = document.createElement("p");
+        dquantity.textContent = `quantity : ${el.quantity}`;
+        dataDiv.append(dname, pdisp, dsize, dquantity);
+        contentdiv.append(imgDiv, dataDiv);
+        let buttons = document.createElement("div");
+        buttons.setAttribute("class", "edit");
+        let a1 = document.createElement("a");
+        a1.textContent = "Add to favorites"
+        let a2 = document.createElement("a");
+        a2.textContent = "Remove";
+        a2.addEventListener("click", () => {
+            console.log("jaimatadi")
+            let filtered = arr.filter((e) => {
+                if (e.id == el.id) {
+                    return false
+                }
+                return true
+            })
+            localStorage.setItem("cart-items", JSON.stringify(filtered));
+            window.location.reload();
+        })
+        buttons.append(a1, a2);
+        card.append(contentdiv, buttons);
+        cardlist.append(card);
     })
 }
 
-// calculation of price
-
-function totalPrice(){
-    let price = document.getElementById("price");
-    let totalBill = document.getElementById("total_bill");
-    let deliveryChrg = document.getElementById("deliveryChrg");
-    let discount = document.getElementById("discount");
-    
-    // actual price of product
-    let sum=0;
-    for(let i=0; i<lsData.length; i++){
-        sum+=lsData[i].price*lsData[i].Quantity;
-    }
-    price.textContent = sum;
-    setProgress(sum);
-
-    // discount
-
-    // shiping charge
-
-
-    // final price
-    totalBill.textContent = (+price.textContent) - (+discount.textContent) + (+deliveryChrg.textContent);
-}

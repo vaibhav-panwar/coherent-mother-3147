@@ -1,79 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="cart.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="./styles/cart.css">
 </head>
+
 <body>
 
-    <!-- progress bar -->
-    <div id="progressBar">
-        <p id="need_to_buy">Spend <span id="shipping_amt">0.00</span> more for free standard shipping!</p>
-        <div id="progress">
-            <div id="bar"></div>
-        </div>
+  <!-- progress bar -->
+  <div id="progressBar">
+    <p id="need_to_buy">Spend <span id="shipping_amt">0.00</span> more for free standard shipping!</p>
+    <div id="progress">
+      <div id="bar"></div>
     </div>
+  </div>
+  <!-- container -->
+  <div id="big-cont">
+    <div id="item">
+      <h1><span id="noOfItems"></span> items</h1>
+      <div id="cardList">
 
-    <div class="cart_container">
-        <!-- left div -->
-        <div class="total_item">
-            <div class="product-container"></div>
-        </div>
-
-        <!-- right div -->
-        <div class="total_bill">
-            <div class="heading">
-                <h2>Order Details</h2>
-            </div>
-            <div class="price_calculation">
-                <div class="calculation">
-                    <div>Price</div>
-                    <div><sapn id="price">0</sapn></div>
-                </div>
-                <div class="calculation">
-                    <div>Discount</div>
-                    <div><sapn id="discount">0</sapn></div>
-                </div>
-                <div class="calculation">
-                    <div>Delivery Charge</div>
-                    <div><sapn id="deliveryChrg">60</sapn></div>
-                </div>
-            </div>
-            <div class="total_price">
-                <div class="calculation">
-                    <div>Total Amount</div>
-                    <div><sapn id="total_bill">0</sapn></div>
-                </div>
-            </div>
-            <div class="btn"><button id="btnBuy">Buy</button></div>
-        </div>
+      </div>
     </div>
-
-    <!-- for customer details -->
-    <div class="customer_details">
-
-        <div class="details" id="customer_address">
-        </div>
-
-        <div class="details" id="customer_paymentOpt">
-            <div class="details_box" id="method">
-            </div>
-
-            <div class="details_box" id="cod-info">
-            </div>
-    
-            <div class="details_box" id="online-info">
-            </div>
-        </div>
-
-        <div class="details btn" id="final_opt">
-        </div>
+    <div id="buy">
+      <h2>Order Summary</h2>
+      <div>
+        <p>Total Price : <span id="totalprice"></span></p>
+        <p>Discount : <span id="totaldiscount"></span></p>
+        <p>Shipping Charges : <span id="shipping"></span></p>
+        <h3>Total : <span id="alltotal"></span></h3>
+      </div>
+      <div id="checkout">
+        <button id="btn1">Checkout(cash on delivery)</button>
+        <button id="btn2">Checkout(online)</button>
+      </div>
+      <form action="#">
+        <label for="cardnumber">Enter card number</label>
+        <input type="number" id="cardnumber">
+        <label for="expirey">Enter expiry date</label>
+        <input type="date" id="expirey">
+        <label for="cvv">Enter CVV number</label>
+        <input type="password" id="cvv">
+        <input type="submit" id="submitbtn">
+      </form>
 
     </div>
+  </div>
 
-    <script src="cart.js"></script>
+
+
 </body>
+<script src="./scripts/cart.js"></script>
+
 </html>

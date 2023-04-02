@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./styles/sidebar.css">
     <link rel="stylesheet" href="./styles/productsPage.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
 </head>
 <body>
 <!-- NavBar... -->
@@ -26,246 +27,249 @@
     <img src="homepageImgs/sliderImg3.png" alt="">
 </div>
 
-<!-- navbar -->
-<nav class="navbar">
-    <!-- top section -->
-    <div class="navTopSection">
-        <div>
-            <a href="">ETHICAL THREADS</a>
-            <img src="homepageImgs/aerie.png" alt="" height="22px" class="aerie">
+    <!-- navbar -->
+    <nav class="navbar">
+        <!-- top section -->
+        <div class="navTopSection">
+            <div>
+                <a href="index.html">ETHICAL THREADS</a>
+                <a href="adminSignIn.html">ADMIN LOGIN</a>
+                <!-- <img src="homepageImgs/aerie.png" alt="" height="22px" class="aerie"> -->
+            </div>
+            <div>
+                <input type="text" name="" id="searchBox" placeholder="Search by Category">
+               <button class="searchbtn"><span class="material-symbols-outlined">search</span></button>
+               <a href=""><span class="material-symbols-outlined">account_circle</span></a>
+               <a href=""><span class="material-symbols-outlined">favorite</span></a>
+               <a href="cart.html"><span class="material-symbols-outlined">shopping_cart_checkout</span></a>
+            </div>
         </div>
-        <div>
-            <input type="text" name="" id="searchBox" placeholder="Search">
-           <button class="searchbtn"><span class="material-symbols-outlined">search</span></button>
-           <a href=""><span class="material-symbols-outlined">account_circle</span></a>
-           <a href=""><span class="material-symbols-outlined">favorite</span></a>
-           <a href=""><span class="material-symbols-outlined">shopping_cart_checkout</span></a>
+        <!-- top section end's here -->
+        
+        <!-- center logo -->
+        <img src="homepageImgs/webLogo.jpg" class="centerLogo">
+        
+        <!-- navbar bottom section -->
+        <div class="navBottom">
+        
+        <button>Today's offers</button>
+        
+        <button class="today"> <span class="men">Men</span>
+            <div class="dropdown" style="margin-left: -33.66%;">
+               <div class="ddsection">
+                <b>categories</b>
+                <hr>
+                <a href="productsPage.html">Tops</a>
+                <a href="productsPage.html">Jeans</a>
+                <a href="productsPage.html">Shorts</a>
+                <a href="productsPage.html">T-shirts</a>
+                <a href="productsPage.html">Bottoms</a>
+                <a href="productsPage.html">Dresses</a>
+                <a href="productsPage.html">Loungewear</a>
+                <a href="productsPage.html">Matching sets</a>
+                <a href="productsPage.html">Jackets</a>
+                <a href="productsPage.html">AE77 Premium Demin</a>
+               </div>   
+
+               <div class="ddsection">
+                <hr>
+                <a href="productsPage.html">AE77 Premium demin</a>
+                <a href="productsPage.html">Accessories and socks</a>
+                <a href="productsPage.html">Shoes</a>
+                <a href="productsPage.html">Cologne</a>
+                <a href="productsPage.html">Clearance</a>
+                <a href="productsPage.html">Gift Cards</a>
+               </div>
+
+               <div class="ddsection">
+                  <b>New & Collections</b>
+                  <hr>
+                  <a href="productsPage.html">New Arrivals</a>
+                  <a href="productsPage.html">Online Only</a>
+                  <a href="productsPage.html">AE24/7 active wear</a>
+                  <a href="productsPage.html">AE77 Premium demin</a>
+                  <a href="productsPage.html">Looks we love</a>
+                  <a href="productsPage.html">Spring break shop</a>
+                  <a href="productsPage.html">Multipacks</a>
+                  <a href="productsPage.html">Brands we love</a>
+               </div>
+            </div>
+        </button>
+        
+        
+        <button class="today"><span class="women">Women</span>
+            <div class="dropdown" style="margin-left: -39%";>
+                <div class="ddsection">
+                 <b>categories</b>
+                 <hr>
+                 <a href="productsPage.html">Tops</a>
+                 <a href="productsPage.html">Jeans</a>
+                 <a href="productsPage.html">Shorts</a>
+                 <a href="productsPage.html">T-shirts</a>
+                 <a href="productsPage.html">Bottoms</a>
+                 <a href="productsPage.html">Dresses</a>
+                 <a href="productsPage.html">Loungewear</a>
+                 <a href="productsPage.html">Matching sets</a>
+                 <a href="productsPage.html">Jackets</a>
+                 <a href="productsPage.html">AE77 Premium Demin</a>
+                </div>   
+ 
+                <div class="ddsection">
+                 <hr>
+                 <a href="productsPage.html">AE77 Premium demin</a>
+                 <a href="productsPage.html">Accessories and socks</a>
+                 <a href="productsPage.html">Shoes</a>
+                 <a href="productsPage.html">Cologne</a>
+                 <a href="productsPage.html">Clearance</a>
+                 <a href="productsPage.html">Gift Cards</a>
+                </div>
+ 
+                <div class="ddsection">
+                   <b>New & Collections</b>
+                   <hr>
+                   <a href="productsPage.html">New Arrivals</a>
+                   <a href="productsPage.html">Online Only</a>
+                   <a href="productsPage.html">AE24/7 active wear</a>
+                   <a href="productsPage.html">AE77 Premium demin</a>
+                   <a href="productsPage.html">Looks we love</a>
+                   <a href="productsPage.html">Spring break shop</a>
+                   <a href="productsPage.html">Multipacks</a>
+                   <a href="productsPage.html">Brands we love</a>
+                </div>
+             </div>
+        </button>
+
+        <button class="today"><span class="jeans">Jeans</span>
+            <div class="dropdown" style="margin-left: -45%">
+                <div class="ddsection">
+                 <b>categories</b>
+                 <hr>
+                 <a href="productsPage.html">Tops</a>
+                 <a href="productsPage.html">Jeans</a>
+                 <a href="productsPage.html">Shorts</a>
+                 <a href="productsPage.html">T-shirts</a>
+                 <a href="productsPage.html">Bottoms</a>
+                 <a href="productsPage.html">Dresses</a>
+                 <a href="productsPage.html">Loungewear</a>
+                 <a href="productsPage.html">Matching sets</a>
+                 <a href="productsPage.html">Jackets</a>
+                 <a href="productsPage.html">AE77 Premium Demin</a>
+                </div>   
+ 
+                <div class="ddsection">
+                 <hr>
+                 <a href="productsPage.html">AE77 Premium demin</a>
+                 <a href="productsPage.html">Accessories and socks</a>
+                 <a href="productsPage.html">Shoes</a>
+                 <a href="productsPage.html">Cologne</a>
+                 <a href="productsPage.html">Clearance</a>
+                 <a href="productsPage.html">Gift Cards</a>
+                </div>
+ 
+                <div class="ddsection">
+                   <b>New & Collections</b>
+                   <hr>
+                   <a href="productsPage.html">New Arrivals</a>
+                   <a href="productsPage.html">Online Only</a>
+                   <a href="productsPage.html">AE24/7 active wear</a>
+                   <a href="productsPage.html">AE77 Premium demin</a>
+                   <a href="productsPage.html">Looks we love</a>
+                   <a href="productsPage.html">Spring break shop</a>
+                   <a href="productsPage.html">Multipacks</a>
+                   <a href="productsPage.html">Brands we love</a>
+                </div>
+             </div>
+        </button>
+
+        <button class="today">Shoes & Accessories
+            <div class="dropdown" style="margin-left: -48.50%">
+                <div class="ddsection">
+                 <b>categories</b>
+                 <hr>
+                 <a href="productsPage.html">Tops</a>
+                 <a href="productsPage.html">Jeans</a>
+                 <a href="productsPage.html">Shorts</a>
+                 <a href="productsPage.html">T-shirts</a>
+                 <a href="productsPage.html">Bottoms</a>
+                 <a href="productsPage.html">Dresses</a>
+                 <a href="productsPage.html">Loungewear</a>
+                 <a href="productsPage.html">Matching sets</a>
+                 <a href="productsPage.html">Jackets</a>
+                 <a href="productsPage.html">AE77 Premium Demin</a>
+                </div>   
+ 
+                <div class="ddsection">
+                 <hr>
+                 <a href="productsPage.html">AE77 Premium demin</a>
+                 <a href="productsPage.html">Accessories and socks</a>
+                 <a href="productsPage.html">Shoes</a>
+                 <a href="productsPage.html">Cologne</a>
+                 <a href="productsPage.html">Clearance</a>
+                 <a href="productsPage.html">Gift Cards</a>
+                </div>
+ 
+                <div class="ddsection">
+                   <b>New & Collections</b>
+                   <hr>
+                   <a href="productsPage.html">New Arrivals</a>
+                   <a href="productsPage.html">Online Only</a>
+                   <a href="productsPage.html">AE24/7 active wear</a>
+                   <a href="productsPage.html">AE77 Premium demin</a>
+                   <a href="productsPage.html">Looks we love</a>
+                   <a href="productsPage.html">Spring break shop</a>
+                   <a href="productsPage.html">Multipacks</a>
+                   <a href="productsPage.html">Brands we love</a>
+                </div>
+             </div>
+        </button>
+        <button class="today">Swimsuits
+            <div class="dropdown" style="margin-left: -60%">
+                <div class="ddsection">
+                 <b>categories</b>
+                 <hr>
+                 <a href="productsPage.html">Tops</a>
+                 <a href="productsPage.html">Jeans</a>
+                 <a href="productsPage.html">Shorts</a>
+                 <a href="productsPage.html">T-shirts</a>
+                 <a href="productsPage.html">Bottoms</a>
+                 <a href="productsPage.html">Dresses</a>
+                 <a href="productsPage.html">Loungewear</a>
+                 <a href="productsPage.html">Matching sets</a>
+                 <a href="productsPage.html">Jackets</a>
+                 <a href="productsPage.html">AE77 Premium Demin</a>
+                </div>   
+ 
+                <div class="ddsection">
+                 <hr>
+                 <a href="productsPage.html">AE77 Premium demin</a>
+                 <a href="productsPage.html">Accessories and socks</a>
+                 <a href="productsPage.html">Shoes</a>
+                 <a href="productsPage.html">Cologne</a>
+                 <a href="productsPage.html">Clearance</a>
+                 <a href="productsPage.html">Gift Cards</a>
+                </div>
+ 
+                <div class="ddsection">
+                   <b>New & Collections</b>
+                   <hr>
+                   <a href="productsPage.html">New Arrivals</a>
+                   <a href="productsPage.html">Online Only</a>
+                   <a href="productsPage.html">AE24/7 active wear</a>
+                   <a href="productsPage.html">AE77 Premium demin</a>
+                   <a href="productsPage.html">Looks we love</a>
+                   <a href="productsPage.html">Spring break shop</a>
+                   <a href="productsPage.html">Multipacks</a>
+                   <a href="productsPage.html">Brands we love</a>
+                </div>
+             </div>
+        </button>
+        <button>Aerie</button>
+        <button>Clearance</button>
         </div>
-    </div>
-    <!-- top section end's here -->
-    
-    <!-- center logo -->
-    <img src="homepageImgs/webLogo.jpg" class="centerLogo">
-    
-    <!-- navbar bottom section -->
-    <div class="navBottom">
-    
-    <button>Today's offers</button>
-    
-    <button class="today">Men
-        <div class="dropdown" style="margin-left: -33.66%;">
-           <div class="ddsection">
-            <b>categories</b>
-            <hr>
-            <a href="">Tops</a>
-            <a href="">Jeans</a>
-            <a href="">Shorts</a>
-            <a href="">T-shirts</a>
-            <a href="">Bottoms</a>
-            <a href="">Dresses</a>
-            <a href="">Loungewear</a>
-            <a href="">Matching sets</a>
-            <a href="">Jackets</a>
-            <a href="">AE77 Premium Demin</a>
-           </div>   
 
-           <div class="ddsection">
-            <hr>
-            <a href="">AE77 Premium demin</a>
-            <a href="">Accessories and socks</a>
-            <a href="">Shoes</a>
-            <a href="">Cologne</a>
-            <a href="">Clearance</a>
-            <a href="">Gift Cards</a>
-           </div>
+    </nav>
 
-           <div class="ddsection">
-              <b>New & Collections</b>
-              <hr>
-              <a href="">New Arrivals</a>
-              <a href="">Online Only</a>
-              <a href="">AE24/7 active wear</a>
-              <a href="">AE77 Premium demin</a>
-              <a href="">Looks we love</a>
-              <a href="">Spring break shop</a>
-              <a href="">Multipacks</a>
-              <a href="">Brands we love</a>
-           </div>
-        </div>
-    </button>
-    
-    
-    <button class="today">Women
-        <div class="dropdown" style="margin-left: -39%";>
-            <div class="ddsection">
-             <b>categories</b>
-             <hr>
-             <a href="">Tops</a>
-             <a href="">Jeans</a>
-             <a href="">Shorts</a>
-             <a href="">T-shirts</a>
-             <a href="">Bottoms</a>
-             <a href="">Dresses</a>
-             <a href="">Loungewear</a>
-             <a href="">Matching sets</a>
-             <a href="">Jackets</a>
-             <a href="">AE77 Premium Demin</a>
-            </div>   
-
-            <div class="ddsection">
-             <hr>
-             <a href="">AE77 Premium demin</a>
-             <a href="">Accessories and socks</a>
-             <a href="">Shoes</a>
-             <a href="">Cologne</a>
-             <a href="">Clearance</a>
-             <a href="">Gift Cards</a>
-            </div>
-
-            <div class="ddsection">
-               <b>New & Collections</b>
-               <hr>
-               <a href="">New Arrivals</a>
-               <a href="">Online Only</a>
-               <a href="">AE24/7 active wear</a>
-               <a href="">AE77 Premium demin</a>
-               <a href="">Looks we love</a>
-               <a href="">Spring break shop</a>
-               <a href="">Multipacks</a>
-               <a href="">Brands we love</a>
-            </div>
-         </div>
-    </button>
-
-    <button class="today">Jeans
-        <div class="dropdown" style="margin-left: -45%">
-            <div class="ddsection">
-             <b>categories</b>
-             <hr>
-             <a href="">Tops</a>
-             <a href="">Jeans</a>
-             <a href="">Shorts</a>
-             <a href="">T-shirts</a>
-             <a href="">Bottoms</a>
-             <a href="">Dresses</a>
-             <a href="">Loungewear</a>
-             <a href="">Matching sets</a>
-             <a href="">Jackets</a>
-             <a href="">AE77 Premium Demin</a>
-            </div>   
-
-            <div class="ddsection">
-             <hr>
-             <a href="">AE77 Premium demin</a>
-             <a href="">Accessories and socks</a>
-             <a href="">Shoes</a>
-             <a href="">Cologne</a>
-             <a href="">Clearance</a>
-             <a href="">Gift Cards</a>
-            </div>
-
-            <div class="ddsection">
-               <b>New & Collections</b>
-               <hr>
-               <a href="">New Arrivals</a>
-               <a href="">Online Only</a>
-               <a href="">AE24/7 active wear</a>
-               <a href="">AE77 Premium demin</a>
-               <a href="">Looks we love</a>
-               <a href="">Spring break shop</a>
-               <a href="">Multipacks</a>
-               <a href="">Brands we love</a>
-            </div>
-         </div>
-    </button>
-
-    <button class="today">Shoes & Accessories
-        <div class="dropdown" style="margin-left: -48.50%">
-            <div class="ddsection">
-             <b>categories</b>
-             <hr>
-             <a href="">Tops</a>
-             <a href="">Jeans</a>
-             <a href="">Shorts</a>
-             <a href="">T-shirts</a>
-             <a href="">Bottoms</a>
-             <a href="">Dresses</a>
-             <a href="">Loungewear</a>
-             <a href="">Matching sets</a>
-             <a href="">Jackets</a>
-             <a href="">AE77 Premium Demin</a>
-            </div>   
-
-            <div class="ddsection">
-             <hr>
-             <a href="">AE77 Premium demin</a>
-             <a href="">Accessories and socks</a>
-             <a href="">Shoes</a>
-             <a href="">Cologne</a>
-             <a href="">Clearance</a>
-             <a href="">Gift Cards</a>
-            </div>
-
-            <div class="ddsection">
-               <b>New & Collections</b>
-               <hr>
-               <a href="">New Arrivals</a>
-               <a href="">Online Only</a>
-               <a href="">AE24/7 active wear</a>
-               <a href="">AE77 Premium demin</a>
-               <a href="">Looks we love</a>
-               <a href="">Spring break shop</a>
-               <a href="">Multipacks</a>
-               <a href="">Brands we love</a>
-            </div>
-         </div>
-    </button>
-    <button class="today">Swimsuits
-        <div class="dropdown" style="margin-left: -60%">
-            <div class="ddsection">
-             <b>categories</b>
-             <hr>
-             <a href="">Tops</a>
-             <a href="">Jeans</a>
-             <a href="">Shorts</a>
-             <a href="">T-shirts</a>
-             <a href="">Bottoms</a>
-             <a href="">Dresses</a>
-             <a href="">Loungewear</a>
-             <a href="">Matching sets</a>
-             <a href="">Jackets</a>
-             <a href="">AE77 Premium Demin</a>
-            </div>   
-
-            <div class="ddsection">
-             <hr>
-             <a href="">AE77 Premium demin</a>
-             <a href="">Accessories and socks</a>
-             <a href="">Shoes</a>
-             <a href="">Cologne</a>
-             <a href="">Clearance</a>
-             <a href="">Gift Cards</a>
-            </div>
-
-            <div class="ddsection">
-               <b>New & Collections</b>
-               <hr>
-               <a href="">New Arrivals</a>
-               <a href="">Online Only</a>
-               <a href="">AE24/7 active wear</a>
-               <a href="">AE77 Premium demin</a>
-               <a href="">Looks we love</a>
-               <a href="">Spring break shop</a>
-               <a href="">Multipacks</a>
-               <a href="">Brands we love</a>
-            </div>
-         </div>
-    </button>
-    <button>Aerie</button>
-    <button>Clearance</button>
-    </div>
-
-</nav>
+    <!-- nav bar ends here -->
 
 
     <div id="main" >
@@ -424,5 +428,6 @@
 </body>
 <script src="./scripts/productsPage.js"></script>
 <script src="./scripts/sidebar.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 </html>

@@ -34,17 +34,43 @@ let Menbtn = document.querySelector(".men")
 Menbtn.addEventListener("click", ()=>{
     localdata = "men"
     localStorage.setItem("filterbyCat", localdata)
+    window.location.href = "./productsPage.html"
   })
   
 let womenbtn = document.querySelector(".women")
 womenbtn.addEventListener("click", ()=>{
-    localdata = "women"
-    localStorage.setItem("filterbyCat", localdata)
-  })
-  
-let jeans = document.querySelector(".jeans")
-jeans.addEventListener("click", ()=>{
-    localdata = "jeans"
-    localStorage.setItem("filterbyCat", localdata)
+  localdata = "women"
+  localStorage.setItem("filterbyCat", localdata)
+  window.location.href = "./productsPage.html"
 })
 
+let jeans = document.querySelector(".jeans")
+jeans.addEventListener("click", ()=>{
+  localdata = "jeans"
+  localStorage.setItem("filterbyCat", localdata)
+  window.location.href = "./productsPage.html"
+})
+
+
+//shop now button product page navigation
+let shopnowbtns = document.querySelectorAll(".productpage")
+
+for(let i = 0; i < shopnowbtns.length; i++){
+   shopnowbtns[i].addEventListener("click", ()=>{
+      window.location.href = "./productsPage.html"
+    })
+  }
+  
+  //searchinput
+  let searchData = localStorage.getItem("searchfilter") || null
+
+  let searchinput = document.getElementById("searchBox")
+  let searchbtn = document.querySelector(".searchbtn")
+  
+  searchbtn.addEventListener("click", ()=>{
+    
+      searchData = searchinput.value;
+      localStorage.setItem("searchfilter", searchData)
+      window.location.href = "./productsPage.html"
+
+})
