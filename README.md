@@ -1,7 +1,7 @@
 # coherent-mother-3147
 This website is a group project created by Ashutosh Dubey, Raj Thakur, Vaibhav Panwar, Ranjeet Gupta, and Swati. It is a website that showcases their skills in web development and design.
 
-The website features a clean and modern design, with easy navigation and user-friendly interface. It is responsive, meaning it adjusts to different screen sizes and devices, ensuring a great user experience for everyone.
+The website features a clean and modern design, with easy navigation and user-friendly interface, ensuring a great user experience for everyone.
 
 The website contains the following sections:
 
